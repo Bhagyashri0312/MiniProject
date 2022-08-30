@@ -24,7 +24,7 @@ public class Controller {
 
     @PostMapping("/movie")
     public String getMixedWords(Model model){
-         Word mixedWord = service.getWordService();
+         char mixedWord = service.getWordState();
          model.addAttribute("word", mixedWord);
         return "game";
     }

@@ -1,7 +1,6 @@
 package com.example.demo;
 
 import org.springframework.stereotype.Repository;
-import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,14 +25,24 @@ public MixedWordRepository(){
     words.add(new Word("Rango"));
     words.add(new Word("Limitless"));
 }
-
-
-    public Word getWord(){
+    public String getWord(){
         Random random = new Random();
-        Word word = words.get(random.nextInt(words.size()));
+        String word = String.valueOf(words.get(random.nextInt(words.size())));
         return word;
     }
 
+    public char printWordState(String word, char playerGuesses){
+    for (int i = 0; i<word.length();i++){
+            if (playerGuesses == (word.charAt(i))) {
+                return word.charAt(i);
+            }
+            else {
+                System.out.print("-");
+            }
+        }
+        return '-';
+    }
+
+    }
 
 
-}

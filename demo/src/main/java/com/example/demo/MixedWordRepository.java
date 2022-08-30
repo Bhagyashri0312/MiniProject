@@ -31,18 +31,6 @@ public MixedWordRepository(){
         return word;
     }
 
-    public char printWordState(String word, char playerGuesses){
-    for (int i = 0; i<word.length();i++){
-            if (playerGuesses == (word.charAt(i))) {
-                return word.charAt(i);
-            }
-            else {
-                System.out.print("-");
-            }
-        }
-        return '-';
-    }
-
     }
 
 

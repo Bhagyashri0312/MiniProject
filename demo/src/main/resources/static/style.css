@@ -1,0 +1,12 @@
+img{
+ display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px;
+  height: 200px;
+}
+
+h1{
+color: rgb(106,90,205);
+text-align: center;
+}

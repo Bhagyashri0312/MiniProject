@@ -13,20 +13,31 @@ import java.util.List;
 @org.springframework.stereotype.Controller
 public class Controller {
 
-    @Autowired
-    private WordService service;
 
 
-   @GetMapping("/movie")
+   @GetMapping("/mixedWord")
    public String getMovieWords(){
        return "game";
    }
 
-    @PostMapping("/movie")
-    public String getMixedWords(Model model){
-         char mixedWord = service.getWordState();
-         model.addAttribute("word", mixedWord);
-        return "game";
+    @PostMapping("/mixedWord")
+    public String getMixedWords(Model model, @RequestParam char c, HttpSession session){
+       WordService wordService = (WordService) session.getAttribute("wordService");
+       if(wordService == null){
+           wordService = new WordService();
+       }
+
+       //session.setAttribute("getWord", service.repository.getWord());
+       StringBuilder mixedWord = (wordService.makeGuess(c));
+       if(wordService.finished()){
+
+       }
+       else {
+           model.addAttribute("word", mixedWord);
+           session.setAttribute("wordService", wordService);
+       }
+           return "game";
+
     }
 
 

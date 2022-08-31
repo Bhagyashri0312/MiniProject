@@ -27,10 +27,20 @@ public MixedWordRepository(){
 }
     public String getWord(){
         Random random = new Random();
-        String word = String.valueOf(words.get(random.nextInt(words.size())));
-        return word;
+        return String.valueOf(words.get(random.nextInt(words.size())));
     }
 
+   /* public String printWordState(String word, char playerGuesses){
+    for (int i = 0; i<word.length();i++){
+            if (playerGuesses == (word.charAt(i))) {
+                return "word.charAt(i)";
+            }
+            else {
+                return "-";
+            }
+        }
+        return null;
+    }*/
     }
 
 

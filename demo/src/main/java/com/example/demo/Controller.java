@@ -39,16 +39,5 @@ public class Controller {
            return "game";
 
     }
-   /* @GetMapping("/gameWon")
-    public String getGameWon(HttpSession session){
-        WordService wordService = (WordService) session.getAttribute("gamewon");
-        if(wordService.finished()) {
-            return "gameWon";
-        }
-        return "redirect:/game";
-    }
-*/
-
-
 
 }

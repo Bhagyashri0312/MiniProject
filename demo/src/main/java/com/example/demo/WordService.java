@@ -9,7 +9,6 @@ import javax.annotation.PostConstruct;
 @Service
 public class WordService {
 
-
     MixedWordRepository repository;
     String secretWord;
     StringBuilder showWord;
@@ -35,10 +34,10 @@ public class WordService {
   /*  public void count() {
         int count =0;
         while (count < 7 && showWord.toString().contains("*")) {
-         *//*   *//**//*System.out.println("Guess any letter in the word");
-            System.out.println(asterisk);*//**//*
-            String makeGue= sc.next();
-            hang(guess);*//*
+        System.out.println("Guess any letter in the word");
+        System.out.println(asterisk);*//**//*
+        String makeGue= sc.next();
+        hang(guess);
         }*/
 
     public boolean finished(){

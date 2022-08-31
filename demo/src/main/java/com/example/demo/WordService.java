@@ -18,7 +18,7 @@ public class WordService {
     public WordService(){
         repository = new MixedWordRepository();
         secretWord = repository.getWord();
-        showWord = new StringBuilder("_".repeat(secretWord.length()));
+        showWord = new StringBuilder("*".repeat(secretWord.length()));
     }
 
     public StringBuilder makeGuess(char ch){
@@ -27,14 +27,23 @@ public class WordService {
             if(secretWord.charAt(i)==ch){
                 showWord.setCharAt(i,ch);
             }
-        }
+
+            }
+
         return showWord;
     }
+  /*  public void count() {
+        int count =0;
+        while (count < 7 && showWord.toString().contains("*")) {
+         *//*   *//**//*System.out.println("Guess any letter in the word");
+            System.out.println(asterisk);*//**//*
+            String makeGue= sc.next();
+            hang(guess);*//*
+        }*/
 
     public boolean finished(){
-        return showWord.equals(secretWord);
+
+        return showWord.toString().equals(secretWord);
     }
-   /* public String getWordState() {
-        return repository.printWordState(repository.getWord(),'a');
-    }*/
+
 }

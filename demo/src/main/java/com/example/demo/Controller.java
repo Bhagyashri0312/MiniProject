@@ -26,11 +26,11 @@ public class Controller {
        if(wordService == null){
            wordService = new WordService();
        }
-
        //session.setAttribute("getWord", service.repository.getWord());
        StringBuilder mixedWord = (wordService.makeGuess(c));
        if(wordService.finished()){
-
+           session.setAttribute("wordService",new WordService());
+           return "gameWon";
        }
        else {
            model.addAttribute("word", mixedWord);
@@ -39,6 +39,15 @@ public class Controller {
            return "game";
 
     }
+   /* @GetMapping("/gameWon")
+    public String getGameWon(HttpSession session){
+        WordService wordService = (WordService) session.getAttribute("gamewon");
+        if(wordService.finished()) {
+            return "gameWon";
+        }
+        return "redirect:/game";
+    }
+*/
 
 
 

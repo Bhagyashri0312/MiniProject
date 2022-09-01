@@ -37,6 +37,13 @@ public class WordService {
         return showWord;
     }
 
+    public int getGuessCount() {
+        return guessCount;
+    }
+
+    public String getShowWord() {
+        return showWord.toString();
+    }
 
     public boolean finished() {
 
@@ -44,7 +51,7 @@ public class WordService {
     }
 
     public boolean failed(){
-        return guessCount>3;
+        return guessCount > 10;
     }
 
 }

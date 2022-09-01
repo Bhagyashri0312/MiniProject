@@ -16,20 +16,25 @@ public class Controller {
 
 
    @GetMapping("/mixedWord")
-   public String getMovieWords(){
+   public String getMovieWords(HttpSession session, Model model){
+       WordService wordService = new WordService();
+       session.setAttribute("wordService", wordService);
+       model.addAttribute("word", wordService.getShowWord());
        return "game";
    }
 
     @PostMapping("/mixedWord")
-    public String getMixedWords(Model model, @RequestParam char c, HttpSession session){
+    public String getMixedWords(Model model, @RequestParam String c, HttpSession session){
+       char guess = c.isEmpty() ? ' ' : c.charAt(0);
        WordService wordService = (WordService) session.getAttribute("wordService");
        if(wordService == null){
            wordService = new WordService();
        }
        //session.setAttribute("getWord", service.repository.getWord());
-       StringBuilder mixedWord = (wordService.makeGuess(c));
+       StringBuilder mixedWord = (wordService.makeGuess(guess));
        if(wordService.finished()){
            session.setAttribute("wordService",new WordService());
+           model.addAttribute("word", mixedWord);
            return "gameWon";
 
        } else if (wordService.failed()) {
@@ -38,6 +43,7 @@ public class Controller {
 
        } else {
            model.addAttribute("word", mixedWord);
+           model.addAttribute("guessCount", wordService.getGuessCount());
            session.setAttribute("wordService", wordService);
        }
            return "game";

@@ -8,18 +8,26 @@ img{
 
   body{
     background-color: lightblue;
-    border: 5px solid white;
+
     margin: 0;
   }
 
 .form{
-margin-left:550px;
-padding: 100px;
-
+text-align: center;
+margin-top: 5px;
 }
 
 h1{
 color: rgb(106,90,205);
 text-align: center;
+}
+h2{
+margin-top: 100px;
+text-align: center;
+}
+
+p{
+font-size: 45px;
+color: #FF4500;
 }
 

@@ -17,10 +17,10 @@ public MixedWordRepository(){
     words.add(new Word("Parasite"));
     words.add(new Word("Joker"));
     words.add(new Word("Coco"));
-    words.add(new Word("The Godfather"));
-    words.add(new Word("The Departed"));
+    words.add(new Word("Godfather"));
+    words.add(new Word("Departed"));
     words.add(new Word("Gladiator"));
-    words.add(new Word("Big Fish"));
+    words.add(new Word("Crocodile"));
     words.add(new Word("Transformers"));
     words.add(new Word("Rango"));
     words.add(new Word("Limitless"));

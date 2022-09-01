@@ -12,37 +12,39 @@ public class WordService {
     MixedWordRepository repository;
     String secretWord;
     StringBuilder showWord;
+    int guessCount;
 
 
-    public WordService(){
+    public WordService() {
         repository = new MixedWordRepository();
         secretWord = repository.getWord();
         showWord = new StringBuilder("*".repeat(secretWord.length()));
+        guessCount = 0;
     }
 
-    public StringBuilder makeGuess(char ch){
-
+    public StringBuilder makeGuess(char ch) {
+        boolean hit = false;
         for (int i = 0; i < secretWord.length(); i++) {
-            if(secretWord.charAt(i)==ch){
-                showWord.setCharAt(i,ch);
+            if (secretWord.charAt(i) == ch) {
+                showWord.setCharAt(i, ch);
+                hit = true;
             }
 
-            }
-
+        }
+        if (!hit) {
+            guessCount++;
+        }
         return showWord;
     }
-  /*  public void count() {
-        int count =0;
-        while (count < 7 && showWord.toString().contains("*")) {
-        System.out.println("Guess any letter in the word");
-        System.out.println(asterisk);*//**//*
-        String makeGue= sc.next();
-        hang(guess);
-        }*/
 
-    public boolean finished(){
+
+    public boolean finished() {
 
         return showWord.toString().equals(secretWord);
+    }
+
+    public boolean failed(){
+        return guessCount>3;
     }
 
 }

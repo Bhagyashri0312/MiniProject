@@ -31,8 +31,12 @@ public class Controller {
        if(wordService.finished()){
            session.setAttribute("wordService",new WordService());
            return "gameWon";
-       }
-       else {
+
+       } else if (wordService.failed()) {
+           session.setAttribute("wordService",new WordService());
+           return "gamelost";
+
+       } else {
            model.addAttribute("word", mixedWord);
            session.setAttribute("wordService", wordService);
        }

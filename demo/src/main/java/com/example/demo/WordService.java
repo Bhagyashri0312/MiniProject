@@ -4,8 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.PostConstruct;
-
 @Service
 public class WordService {
 
@@ -37,6 +35,10 @@ public class WordService {
         return showWord;
     }
 
+    public String getSecretWord() {
+        return secretWord;
+    }
+
     public int getGuessCount() {
         return guessCount;
     }
@@ -46,7 +48,6 @@ public class WordService {
     }
 
     public boolean finished() {
-
         return showWord.toString().equals(secretWord);
     }
 

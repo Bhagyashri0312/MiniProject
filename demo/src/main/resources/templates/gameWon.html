@@ -5,12 +5,10 @@
     <title>Title</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-<h1>Yayy!! You won the Game!</h1>
-<p th:text="${word}"></p>
-
-<a href ="/mixedWord">Click here for another game</a>
-
-
+<body class="won">
+<p class="win">Yayy!! You won the Game!</p>
+<image src="minions.gif" class="minions" alt="congrats image"/>
+<p class="win">The word was <span class="word" th:text="${word}"></span></p>
+<a href ="/mixedWord"><input type="submit" class="button" value="New Game"></a>
 </body>
 </html>

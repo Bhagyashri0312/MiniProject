@@ -12,18 +12,18 @@ private List<Word> words;
 
 public MixedWordRepository(){
     words = new ArrayList<>();
-    words.add(new Word("Avatar"));
-    words.add(new Word("Inception"));
-    words.add(new Word("Parasite"));
-    words.add(new Word("Joker"));
-    words.add(new Word("Coco"));
-    words.add(new Word("Godfather"));
-    words.add(new Word("Departed"));
-    words.add(new Word("Gladiator"));
-    words.add(new Word("Crocodile"));
-    words.add(new Word("Transformers"));
-    words.add(new Word("Rango"));
-    words.add(new Word("Limitless"));
+    words.add(new Word("avatar"));
+    words.add(new Word("inception"));
+    words.add(new Word("parasite"));
+    words.add(new Word("joker"));
+    words.add(new Word("coco"));
+    words.add(new Word("titanic"));
+    words.add(new Word("beast"));
+    words.add(new Word("gladiator"));
+    words.add(new Word("rocky"));
+    words.add(new Word("transformers"));
+    words.add(new Word("rango"));
+    words.add(new Word("limitless"));
 }
     public String getWord(){
         Random random = new Random();

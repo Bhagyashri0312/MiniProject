@@ -6,16 +6,19 @@
     <title>Title</title>
 </head>
 <body>
-<h1> Word Search Game</h1>
-<img src="hangman.png" alt="hangman image">
-<h2> Guess any letter in the word </h2>
+<div class="borderForGame">
+
+    <h2>Category - Movie</h2>
+    <p class="para">Max 10 Wrong Guesses</p>
+    <h2> Guess any letter for the word </h2>
 <div class="form">
 <form action="/mixedWord" method="POST">
-    <input type="text" name="c" size="10">
-    <input type="submit" value="Enter">
+    <input type="text" class="input" name="c" size="10">
+    <input type="submit" class="button" value="Enter">
 </form>
     <p th:text="${word}"></p>
-    <p th:text="${guessCount}"></p>
+    <p class="para">Count of wrong guess: <span th:text="${guessCount}"></span></p>
+</div>
 </div>
 </body>
 </html>

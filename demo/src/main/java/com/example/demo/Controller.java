@@ -14,6 +14,10 @@ import java.util.List;
 public class Controller {
 
 
+    @GetMapping("/mainPage")
+    public String getMainPage(){
+        return "mainPage";
+    }
 
    @GetMapping("/mixedWord")
    public String getMovieWords(HttpSession session, Model model){
@@ -39,6 +43,7 @@ public class Controller {
 
        } else if (wordService.failed()) {
            session.setAttribute("wordService",new WordService());
+           model.addAttribute("word", wordService.getSecretWord());
            return "gamelost";
 
        } else {

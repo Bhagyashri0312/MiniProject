@@ -7,15 +7,18 @@ import org.springframework.stereotype.Service;
 @Service
 public class WordService {
 
-    MixedWordRepository repository;
+    @Autowired
+            MixedWordRepository repository;
+
+    //MixedWordRepository repository;
     String secretWord;
     StringBuilder showWord;
     int guessCount;
 
 
     public WordService() {
-        repository = new MixedWordRepository();
-        secretWord = repository.getWord();
+        //repository = new MixedWordRepository();
+        secretWord = repository.findAllById().toString();
         showWord = new StringBuilder("*".repeat(secretWord.length()));
         guessCount = 0;
     }

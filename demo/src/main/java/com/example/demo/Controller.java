@@ -1,4 +1,4 @@
-package com.example.demo;
+/*package com.example.demo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
@@ -14,7 +14,10 @@ import java.util.List;
 public class Controller {
 
 
-    @GetMapping("/mainPage")
+
+
+
+   @GetMapping("/mainPage")
     public String getMainPage(){
         return "mainPage";
     }
@@ -55,4 +58,4 @@ public class Controller {
 
     }
 
-}
+}*/
